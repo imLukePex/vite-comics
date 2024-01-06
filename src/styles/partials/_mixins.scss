@@ -15,3 +15,20 @@
         align-items: center;
     }
 }
+
+@mixin space($type: 'both') {
+    display: flex;
+
+    @if $type =='vertical' {
+        justify-content: space-between;
+    }
+
+    @else if $type =='horizontal' {
+        align-items: center;
+    }
+
+    @else if $type =='both' {
+        justify-content: space-between;
+        align-items: center;
+    }
+}

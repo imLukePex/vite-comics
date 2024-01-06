@@ -92,7 +92,7 @@ header {
     top: 0;
     left: 0;
     z-index: 500;
-    background: lightblue;
+    background: #ffff;
 
     .container {
         @include center();
@@ -115,7 +115,8 @@ header {
                     text-decoration: none;
                     color: #000;
                     font-size: 15px;
-                    padding: 43px 0;
+                    font-weight: 500;
+                    padding: 44px 0;
 
                     &.active,
                     &:hover {
