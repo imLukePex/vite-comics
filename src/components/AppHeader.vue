@@ -3,57 +3,45 @@ export default {
     name: "AppHeader",
     data() {
         return {
+            activeMenu: 1,
+
             links: [
                 {
-                    text: "CHARACTERS",
-                    status: false,
+                    text: "CHARACTERS"
                 },
                 {
-                    text: "COMICS",
-                    status: true,
+                    text: "COMICS"
                 },
                 {
-                    text: "MOVIES",
-                    status: false,
+                    text: "MOVIES"
                 },
                 {
-                    text: "TV",
-                    status: false,
+                    text: "TV"
                 },
                 {
-                    text: "GAMES",
-                    status: false,
+                    text: "GAMES"
                 },
                 {
-                    text: "COLLECTIBLES",
-                    status: false,
+                    text: "COLLECTIBLES"
                 },
                 {
-                    text: "VIDEOS",
-                    status: false,
+                    text: "VIDEOS"
                 },
                 {
-                    text: "FANS",
-                    status: false,
+                    text: "FANS"
                 },
                 {
-                    text: "NEWS",
-                    status: false,
+                    text: "NEWS"
                 },
                 {
-                    text: "SHOP",
-                    status: false,
+                    text: "SHOP"
                 },
 
             ]
         }
     }, methods: {
         activeLink(i) {
-            if (this.links[i].status === false) {
-                this.links[i].status = true;
-            } else {
-                this.links[i].status = false;
-            }
+            this.activeMenu = i;
         }
     }
 }
@@ -71,7 +59,7 @@ export default {
 
             <nav>
                 <ul>
-                    <li v-for="(link, i) in links" :key="i"><a href="#" :class="link.status ? 'active' : ''"
+                    <li v-for="(link, i) in links" :key="i"><a href="#" :class="activeMenu === i ? 'active' : ''"
                             @click="activeLink(i)">{{ link.text
                             }}</a></li>
                 </ul>
@@ -93,6 +81,7 @@ header {
     left: 0;
     z-index: 500;
     background: #ffff;
+    box-shadow: 0 4px 5px -4px gray;
 
     .container {
         @include center();
